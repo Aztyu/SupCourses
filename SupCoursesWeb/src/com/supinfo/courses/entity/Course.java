@@ -14,6 +14,8 @@ public class Course {
 	private Date start_date;
 	
 	private Date end_date;
+	
+	public Course(){};
 
 	public Course(String title, String description, String start, String end){
 		this.title = title;

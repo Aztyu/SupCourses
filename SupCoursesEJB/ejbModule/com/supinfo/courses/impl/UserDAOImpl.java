@@ -59,7 +59,7 @@ public class UserDAOImpl implements IUserDAO{
 			CriteriaBuilder cb = em.getCriteriaBuilder();
 			CriteriaQuery<User> cq = cb.createQuery(User.class);
 			Root<User> user = cq.from(User.class);
-			cq.where(cb.and(cb.equal(user.get(User_.password), password), cb.equal(user.get(User_.username), username)));
+			cq.where(cb.and(cb.equal(user.get("password"), password), cb.equal(user.get("username"), username)));		//ici on utilise pas User_.username sous peine de plantage nullpointerexception
 			User result = em.createQuery(cq).getSingleResult();
 			et.commit();
 			return result;

@@ -6,10 +6,10 @@ import javax.persistence.EntityTransaction;
 import com.supinfo.courses.database.PersistenceManager;
 import com.supinfo.courses.entity.Course;
 import com.supinfo.courses.entity.User;
-import com.supinfo.courses.interfaces.IDBDAO;
+import com.supinfo.courses.interfaces.IDbDAO;
 import com.supinfo.courses.utils.HashUtils;
 
-public class DBDAOImpl implements IDBDAO{
+public class DBDAOImpl implements IDbDAO{
 	@Override
 	public void initDB() {
 		User user_test = new User();

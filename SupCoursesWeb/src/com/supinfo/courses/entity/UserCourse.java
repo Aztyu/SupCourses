@@ -6,6 +6,8 @@ public class UserCourse {
 	private User user;
 	
 	private Course course;
+	
+	public UserCourse(){};
 
 	public int getId() {
 		return Id;

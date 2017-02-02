@@ -4,13 +4,13 @@ import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 
-import com.supinfo.courses.interfaces.IDBDAO;
+import com.supinfo.courses.interfaces.IDbDAO;
 
 @ManagedBean(name="initBean")
 @RequestScoped
 public class InitBean {
 	@EJB
-	IDBDAO dbdao;
+	IDbDAO dbdao;
 	
 	public String initDB(){
 		dbdao.initDB();

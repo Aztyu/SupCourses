@@ -1,9 +1,18 @@
 package com.supinfo.courses.entity;
 
+import java.util.List;
+
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.OneToMany;
+
 public class User {
 	private int Id;
-	String username;
-	String password;
+	private String username;
+	private String password;
+	private List<UserCourse> course_taken;
+	
+	public User(){}
 
 	public int getId() {
 		return Id;
