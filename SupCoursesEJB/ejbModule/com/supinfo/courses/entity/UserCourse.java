@@ -1,12 +1,14 @@
 package com.supinfo.courses.entity;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.OneToOne;
 
 @Entity
-public class UserCourse {
+public class UserCourse implements Serializable{
 	@javax.persistence.Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int Id;

@@ -1,6 +1,8 @@
 package com.supinfo.courses.entity;
 
-public class UserCourse {
+import java.io.Serializable;
+
+public class UserCourse implements Serializable{
 	private int Id;
 	
 	private User user;

@@ -1,5 +1,6 @@
 package com.supinfo.courses.entity;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -8,7 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.OneToMany;
 
 @Entity
-public class User {
+public class User implements Serializable{
 	@javax.persistence.Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int Id;

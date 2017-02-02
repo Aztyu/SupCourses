@@ -1,5 +1,6 @@
 package com.supinfo.courses.entity;
 
+import java.io.Serializable;
 import java.sql.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -10,7 +11,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 
 @Entity
-public class Course {
+public class Course implements Serializable{
 	@javax.persistence.Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int Id;

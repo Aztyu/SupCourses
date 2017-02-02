@@ -1,12 +1,13 @@
 package com.supinfo.courses.entity;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.OneToMany;
 
-public class User {
+public class User implements Serializable{
 	private int Id;
 	private String username;
 	private String password;

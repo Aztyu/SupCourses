@@ -1,10 +1,11 @@
 package com.supinfo.courses.entity;
 
+import java.io.Serializable;
 import java.sql.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
-public class Course {
+public class Course implements Serializable {
 	private int Id;
 	
 	private String title;
