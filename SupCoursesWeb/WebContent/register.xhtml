@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <title>Login/Register</title>
+    </h:head>
+    <h:body>
+    	<h1>Login</h1>
+    	<h:form>
+    	   <h:inputText value="#{ registerBean.user.username }" />
+    	   <h:inputSecret value="#{ registerBean.user.password }" />
+	       <h:commandButton value="Login" action="#{ registerBean.connect }"/>
+	       <br />
+        </h:form> 
+    	<h1>Register</h1>
+    	<h:form>
+    	   <h:inputText value="#{ registerBean.user.username }" />
+    	   <h:inputSecret value="#{ registerBean.user.password }" />
+	       <h:commandButton value="Register" action="#{ registerBean.register }"/>
+	       <br />
+        </h:form> 
+    </h:body>
+</html>
