@@ -1,5 +1,6 @@
 package com.supinfo.courses.impl;
 
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 
@@ -9,7 +10,8 @@ import com.supinfo.courses.entity.User;
 import com.supinfo.courses.interfaces.IDbDAO;
 import com.supinfo.courses.utils.HashUtils;
 
-public class DBDAOImpl implements IDbDAO{
+@Stateless
+public class IDbDAOImpl implements IDbDAO{
 	@Override
 	public void initDB() {
 		User user_test = new User();

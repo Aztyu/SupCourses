@@ -7,10 +7,19 @@
     	<h1>Welcome to SupCourses #{ registerBean.user.username }</h1>
     	
     	<h:form>
-    		<h:commandButton action="#{registerBean.logout}" value="Logout"></h:commandButton>
+    		<h:commandButton action="#{registerBean.disconnect}" value="Logout"></h:commandButton>
     	</h:form>
     	
     
     	<h2>See our courses :</h2>
+    	
+    	<ui:repeat value="#{courseBean.courses}" var="item">
+    		<h3>#{ item.title }</h3>
+    		<p>#{ item.description }</p>
+    		
+    		<span>Début #{ item.start_date }</span>
+    		<span>Début #{ item.end_date }</span>
+            <h:commandButton value="S'inscrire" />
+        </ui:repeat>
     </h:body>
 </html>

@@ -10,7 +10,7 @@ import com.supinfo.courses.interfaces.IDbDAO;
 @RequestScoped
 public class InitBean {
 	@EJB
-	IDbDAO dbDao;
+	private IDbDAO dbDao;
 	
 	public String initDB(){
 		dbDao.initDB();
