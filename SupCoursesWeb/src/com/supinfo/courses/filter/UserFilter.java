@@ -29,7 +29,7 @@ public class UserFilter implements Filter{
 			HttpSession ses = reqt.getSession(false);
 
 			String reqURI = reqt.getRequestURI();
-			if (reqURI.indexOf("/user.xhtml") >= 0 || (ses != null && ses.getAttribute("user") != null)){		//Si la page est user.xhtml alors il faut être connecté
+			if (reqURI.indexOf("/user.xhtml") == -1 || (ses != null && ses.getAttribute("user") != null)){		//Si la page est user.xhtml alors il faut être connecté
 				chain.doFilter(request, response);
 			}else{																								//Si on est pas connecté alors on redirige vers l'accueil
 				resp.sendRedirect(reqt.getContextPath() + "/homepage.xhtml");

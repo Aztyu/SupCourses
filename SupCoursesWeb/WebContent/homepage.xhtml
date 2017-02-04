@@ -7,8 +7,10 @@
 	xmlns:c="http://java.sun.com/jstl/core">
     <h:head>
         <title>Homepage</title>
+        <h:outputStylesheet library="css" name="styles.css"/>
     </h:head>
     <h:body>
+    
     	<h:panelGroup rendered="#{registerBean.loggedIn}">
 		    <span>Hello #{ registerBean.user.username }</span>
  			<h:form>
@@ -26,6 +28,7 @@
 		<p>Supcourses let you take courses online about all the newest technology available</p>
 
     	<h2>See our courses :</h2>
+    	
     	
     	<ui:repeat value="#{courseBean.courses}" var="item">
     		<h3>#{ item.title }</h3>
