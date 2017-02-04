@@ -16,6 +16,7 @@ import com.supinfo.courses.session.SessionUtils;
 @SessionScoped
 public class RegisterBean {
 	private User user;
+	private boolean loggedIn = false;
 	
 	public RegisterBean() {
 		this.user = new User();
@@ -35,8 +36,9 @@ public class RegisterBean {
 		if(user_connected != null){		//Si il est déjà présent ont le stocke en session 
 			HttpSession session = SessionUtils.getSession();
 			session.setAttribute("user", user);
+			loggedIn = true;
 			
-			return "homepage";
+			return "homepage?faces-redirect=true";
 		}else{
 			user = new User(); //Sinon on affiche un message d'erreur
 			FacesContext.getCurrentInstance().addMessage(
@@ -60,5 +62,9 @@ public class RegisterBean {
 
 	public void setUser(User user) {
 		this.user = user;
+	}
+
+	public boolean isLoggedIn() {
+		return loggedIn;
 	}
 }

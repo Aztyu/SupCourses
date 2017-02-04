@@ -13,16 +13,17 @@ import com.supinfo.courses.interfaces.ICourseDAO;
 @ManagedBean(name="courseBean")
 @RequestScoped
 public class CourseBean {
-	private List<Course> courses;
+	private List<Course> courses = null;
 	
 	@EJB
 	ICourseDAO courseDAO;
 	
-	public CourseBean() {
-		this.courses = courseDAO.getAllCourse();
-	}
+	public CourseBean() {}
 
 	public List<Course> getCourses() {
+		if(courses == null){
+			this.courses = courseDAO.getAllCourse();
+		}
 		return courses;
 	}
 

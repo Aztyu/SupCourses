@@ -1,16 +1,30 @@
 <!DOCTYPE html>
-<html lang="fr" xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://java.sun.com/jsf/facelets">
+<html lang="en" 
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:f="http://java.sun.com/jsf/core" 
+	xmlns:h="http://java.sun.com/jsf/html" 
+	xmlns:ui="http://java.sun.com/jsf/facelets" 
+	xmlns:c="http://java.sun.com/jstl/core">
     <h:head>
         <title>Homepage</title>
     </h:head>
     <h:body>
-    	<h1>Welcome to SupCourses #{ registerBean.user.username }</h1>
-    	
-    	<h:form>
-    		<h:commandButton action="#{registerBean.disconnect}" value="Logout"></h:commandButton>
-    	</h:form>
-    	
-    
+    	<h:panelGroup rendered="#{registerBean.loggedIn}">
+		    <span>Hello #{ registerBean.user.username }</span>
+ 			<h:form>
+    			<h:commandButton action="#{registerBean.disconnect}" value="Logout"></h:commandButton>
+    		</h:form>
+		</h:panelGroup>
+		<h:panelGroup rendered="#{!registerBean.loggedIn}">
+		    <h:form>
+  				<h:outputLink value="register.xhtml">Login or Register</h:outputLink>
+    		</h:form>
+		</h:panelGroup>
+		
+		<h1>Welcome to SupCourses </h1>
+		
+		<p>Supcourses let you take courses online about all the newest technology available</p>
+
     	<h2>See our courses :</h2>
     	
     	<ui:repeat value="#{courseBean.courses}" var="item">
@@ -19,7 +33,12 @@
     		
     		<span>Début #{ item.start_date }</span>
     		<span>Début #{ item.end_date }</span>
-            <h:commandButton value="S'inscrire" />
+            
+            <h:panelGroup rendered="#{registerBean.loggedIn}">
+			    <h:form>
+	    			<h:commandButton value="Take course" />
+	    		</h:form>
+			</h:panelGroup>
         </ui:repeat>
     </h:body>
 </html>

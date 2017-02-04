@@ -24,7 +24,7 @@ public class CourseDAOImpl implements ICourseDAO{
 			em = PersistenceManager.getEntityManager();
 			CriteriaBuilder cb = em.getCriteriaBuilder();
 			CriteriaQuery<Course> cq = cb.createQuery(Course.class);
-			Root<Course> user = cq.from(Course.class);
+			Root<Course> course = cq.from(Course.class);
 			List<Course> result = em.createQuery(cq).getResultList();
 			return result;
 		}catch(Exception ex){
